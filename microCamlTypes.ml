@@ -79,7 +79,7 @@ let rec string_of_aexpr (ae: aexpr): string =
     let st = string_of_type t in
     Printf.sprintf "(fun %s -> %s): %s" id s1 st
   | ANot (e, t) ->
-    let s1 = string_of_aexpr ae in
+    let s1 = string_of_aexpr e in
     let st = string_of_type t in
     Printf.sprintf "not (%s): %s" s1 st
   | ABinop(op, e1, e2, t) ->
@@ -174,7 +174,7 @@ let rec pp_string_of_aexpr (ae: aexpr): string =
     let st = pp_string_of_type t in
     Printf.sprintf "(fun %s -> %s): %s" id s1 st
   | ANot (e, t) ->
-    let s1 = pp_string_of_aexpr ae in
+    let s1 = pp_string_of_aexpr e in
     let st = pp_string_of_type t in
     Printf.sprintf "not (%s): %s" s1 st
   | ABinop(op, e1, e2, t) ->
